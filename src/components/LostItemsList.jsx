@@ -1,12 +1,9 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getLostItems } from '../utils/database';
 
 const LostItemsList = () => {
-  // This is mock data. In a real app, you'd fetch this from an API.
-  const lostItems = [
-    { id: 1, name: 'Blue Umbrella', location: 'Central Park', date: '2023-03-15' },
-    { id: 2, name: 'iPhone 12', location: 'Main Street Cafe', date: '2023-03-14' },
-  ];
+  const lostItems = getLostItems();
 
   return (
     <Card>
