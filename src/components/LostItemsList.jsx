@@ -14,9 +14,11 @@ const LostItemsList = () => {
         <ul>
           {lostItems.map((item) => (
             <li key={item.id} className="mb-4">
-              <h3 className="font-semibold">{item.name}</h3>
-              <p>Location: {item.location}</p>
-              <p>Date: {item.date}</p>
+              <div className={`p-2 rounded-md bg-${item.color}-100 border border-${item.color}-300`}>
+                <h3 className="font-semibold">{item.name}</h3>
+                <p>Location: {item.location}</p>
+                <p>Date: {item.date}</p>
+              </div>
             </li>
           ))}
         </ul>

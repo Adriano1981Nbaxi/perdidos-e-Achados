@@ -3,6 +3,8 @@
 const LOST_ITEMS_KEY = 'lostItems';
 const FOUND_ITEMS_KEY = 'foundItems';
 
+const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
+
 // Helper function to get items from localStorage
 const getItems = (key) => {
   const items = localStorage.getItem(key);
@@ -19,7 +21,8 @@ export const getFoundItems = () => getItems(FOUND_ITEMS_KEY);
 
 export const addLostItem = (item) => {
   const lostItems = getLostItems();
-  const newItem = { ...item, id: Date.now(), type: 'lost' };
+  const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+  const newItem = { ...item, id: Date.now(), type: 'lost', color: randomColor };
   lostItems.push(newItem);
   setItems(LOST_ITEMS_KEY, lostItems);
   return newItem;

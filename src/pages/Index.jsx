@@ -40,10 +40,12 @@ const Index = () => {
             <ul>
               {searchResults.map((item) => (
                 <li key={item.id} className="mb-4">
-                  <h3 className="font-semibold">{item.name}</h3>
-                  <p>Location: {item.location}</p>
-                  <p>Date: {item.date}</p>
-                  <p>Type: {item.type}</p>
+                  <div className={`p-2 rounded-md ${item.type === 'lost' ? `bg-${item.color}-100 border border-${item.color}-300` : 'bg-gray-100 border border-gray-300'}`}>
+                    <h3 className="font-semibold">{item.name}</h3>
+                    <p>Location: {item.location}</p>
+                    <p>Date: {item.date}</p>
+                    <p>Type: {item.type}</p>
+                  </div>
                 </li>
               ))}
             </ul>
